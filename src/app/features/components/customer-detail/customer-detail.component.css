@@ -1,0 +1,9 @@
+.icon-size {
+    font-size: 32px; 
+    color: darkblue;  
+    padding: 10px; 
+  }
+  
+.bg-selected{
+    background-color: darkgray;
+}

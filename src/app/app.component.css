@@ -1,0 +1,9 @@
+.product{ 
+    font-size: large 
+}
+h1{ 
+    font-size: x-large;
+}
+table, tr, td{
+    border: 1px solid black;
+}

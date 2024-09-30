@@ -1,0 +1,36 @@
+<li
+  *ngIf="customer"
+  class="list-group-item d-flex justify-content-between align-items-start"
+  [ngClass]="{
+    'bg-selected': customer.id === selectedCustomerId,
+    'bg-white': customer.id !== selectedCustomerId
+  }"
+>
+  <div class="ms-2 me-auto">
+    <div class="fw-bold">
+      {{ customer.name }}
+      <span
+        class="badge rounded-pill mb-2"
+        [ngClass]="{
+          'text-bg-primary': customer.status === 'lunas',
+          'text-bg-danger': customer.status === 'macet',
+          'text-bg-success': customer.status === 'lancar'
+        }"
+      >
+        {{ customer.status }}
+      </span>
+    </div>
+    {{ customer.email }}
+  </div>
+
+  <span *ngIf="check" class="cursor-pointer" (click)="customerReservasi(customer)">
+    <fa-icon class="icon-size" [icon]="icons.right_arrow"></fa-icon>
+  </span>
+</li>
+
+<li
+  *ngIf="!customer"
+  class="list-group-item d-flex justify-content-center align-items-start"
+>
+  No customer choice...
+</li>
